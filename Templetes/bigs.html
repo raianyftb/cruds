@@ -105,17 +105,34 @@
                 <p>Não existem produtos cadastrados</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
               </div><!-- /.col-lg-4 -->
-
               {% endfor %}
+
               <div class="col-lg-4">
                 <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
                 <h2>Lista dos Funcionários</h2>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                {% for produtos in produtos %}
+                <p>marca: {{produtos.Marca}}
+                   tipo: {{produtos.Tipo}}
+                   quantidade: {{produtos.Quantidade}}
+                <p>
+                  {% empty %}
+                  <p>Não existem produtos cadastrados</p>
+                  <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
               </div><!-- /.col-lg-4 -->
+              {% endfor %}
+
               <div class="col-lg-4">
                 <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
                 <h2>Título</h2>
+                {% for produtos in produtos %}
+                <p>marca: {{produtos.Marca}}
+                   tipo: {{produtos.Tipo}}
+                   quantidade: {{produtos.Quantidade}}
+                <p>
+                  {% empty %}
+                  <p>Não existem produtos cadastrados</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                {% endfor %}
               </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
     
