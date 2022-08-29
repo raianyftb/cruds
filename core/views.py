@@ -19,3 +19,17 @@ def cadastrar_produtos(request):
         'form_cafe': form
     }
     return render(request, 'bigs_cadastrar.html', contexto)
+
+def editar_produto(request, id):
+    produto = Cafe.objects.get(pk=id)
+
+    form = CafeForm(request.POST or None, instance=cafe)
+
+    if form.is_valid():
+        form.save()
+        return redirect('cafe')
+    
+    contexto = {
+        'form_cafe', form 
+    }
+    return render(request, 'bigs.html', contexto)
