@@ -10,3 +10,5 @@ def listar_produtos(request):
     }
     return render(request, 'produtos.html', contexto)
 
+def cadastrar_produtos(request):
+    return render(request, 'produtos_cadastrar.html')
