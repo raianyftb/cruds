@@ -20,20 +20,13 @@
 
     <p>
         Nome: {{produtos.nome}}
-        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
-    </p>
-    <p>
-        Marca: {{produtos.marca}}
-        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
-    </p>
-    <p>
+        Marca: {{produtos.marca}} 
         Quantidade: {{produtos.quantidade}}
-        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
-    </p>
-    <p>
         Descrição: {{produtos.descricao}}
         | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
+        | <a href="{% url 'remover_produtos' produtos.id %}">REMOVER</a>
     </p>
+    
     {% empty %}
     <p>
         Não existem produtos cadastrados

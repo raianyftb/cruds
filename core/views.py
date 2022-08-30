@@ -40,7 +40,7 @@ def cadastrar_produtos(request):
     }
     return render(request, 'produtos_cadastrar.html', contexto)
 
-<<<<<<< HEAD
+
 def editar_produtos(request, id):
     produto = Produtos.objects.get(pk=id)
 
@@ -54,5 +54,8 @@ def editar_produtos(request, id):
         'form_produtos': form 
     }
     return render(request, 'produtos_cadastrar.html')
-=======
->>>>>>> 2f842f4e977ffe400ea42cbca70a8dd2c1cdddb9
+
+def remover_produtos(request,id):
+    produto = Produtos.objects.get(pk=id)
+    produto.delete()
+    return redirect('listar_produtos')
