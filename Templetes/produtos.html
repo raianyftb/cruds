@@ -11,11 +11,16 @@
 
     <p>Listagem de produtos:</p>
 
+
+    <p><a href="{% url 'cadastrar_produtos' %}">Cadastrar</a></p>
+    
+    <p>Listagem de produtos:</p>
+
     {% for produtos in todos_produtos %}
-    <p>Nome: {{rodut.nome}}</p>
-    <p>Marca: {{produt.marca}}</p>
-    <p>Quantidade: {{produt.quantidade}}</p>
-    <p>Descrição: {{produt.descricao}}</p>
+    <p>Nome: {{produtos.nome}}</p>
+    <p>Marca: {{produtos.marca}}</p>
+    <p>Quantidade: {{produtos.quantidade}}</p>
+    <p>Descrição: {{produtos.descricao}}</p>
     {% empty %}
     <p>Não existem produtos cadastrados</p>
     {% endfor %}

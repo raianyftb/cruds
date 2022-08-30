@@ -18,14 +18,13 @@ from django.urls import path
 from core.views import listar_produtos
 from core.views import listar_funcionarios
 from core.views import listar_unidades
+from core.views import listar_produtos, cadastrar_produtos
 
 urlpatterns = [
 
     path('produtos/', listar_produtos, name='listar_produtos'),
-
     path('funcionarios/', listar_funcionarios, name='listar_funcionarios'),
-
     path('unidades/', listar_unidades, name='listar_unidades'),
-  
+    path('cadastrar_produtos/', cadastrar_produtos, name='cadastrar_produtos'),
     path('admin/', admin.site.urls),
 ]
