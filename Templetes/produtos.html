@@ -9,9 +9,13 @@
 <body>
     <h1>Produtos</h1>
 
+    <p>Listagem de produtos:</p>
+
+
     <p><a href="{% url 'cadastrar_produtos' %}">Cadastrar</a></p>
     
     <p>Listagem de produtos:</p>
+
     {% for produtos in todos_produtos %}
 
     <p>
@@ -35,6 +39,7 @@
         Não existem produtos cadastrados
     </p>
     {% endfor %}
+
 </body>
 </html>
 

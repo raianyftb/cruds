@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Produtos
+from .models import Funcionarios
+from .models import Unidades
+
 from .forms import ProdutosForm
+
 
 def listar_produtos(request):
     produto = Produtos.objects.all()
@@ -8,6 +12,21 @@ def listar_produtos(request):
         'todos_produtos': produto
     }
     return render(request, 'produtos.html', contexto)
+
+
+def listar_funcionarios(request):
+    funcionario = Funcionarios.objects.all()
+    contexto = {
+        'todos_funcionarios': funcionario
+    }
+    return render(request, 'funcionarios.html', contexto)  
+
+def listar_unidades(request):
+    unidade = Unidades.objects.all()
+    contexto = {  
+         'todas_unidades': unidade
+    }
+    return render(request, 'unidades.html', contexto)  
 
 def cadastrar_produtos(request):
     form = ProdutosForm(request.POST or None)
@@ -21,6 +40,7 @@ def cadastrar_produtos(request):
     }
     return render(request, 'produtos_cadastrar.html', contexto)
 
+<<<<<<< HEAD
 def editar_produtos(request, id):
     produto = Produtos.objects.get(pk=id)
 
@@ -34,3 +54,5 @@ def editar_produtos(request, id):
         'form_produtos': form 
     }
     return render(request, 'produtos_cadastrar.html')
+=======
+>>>>>>> 2f842f4e977ffe400ea42cbca70a8dd2c1cdddb9

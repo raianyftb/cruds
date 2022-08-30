@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Unidades</h1>
+
+    <p>Listagem de unidades:</p>
+
+    {% for unidade in todos_funcionarios %}
+    <p>Cidade: {{unidade.cidade}}</p>
+    <p>Endereço: {{unidade.endereco}}</p>
+    <p>Número de funcionários: {{unidade.numero_funcionarios}}</p>
+    {% empty %}
+    <p>Não existem unidades cadastradas</p>
+    {% endfor %}
+  
+  
+</body>
+</html>
