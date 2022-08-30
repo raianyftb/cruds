@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
-
 from .models import Produtos
-
+from .forms import ProdutosForm
 
 def listar_produtos(request):
     produto = Produtos.objects.all()
@@ -11,4 +10,13 @@ def listar_produtos(request):
     return render(request, 'produtos.html', contexto)
 
 def cadastrar_produtos(request):
-    return render(request, 'produtos_cadastrar.html')
+    form = ProdutosForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_produtos')
+        
+    contexto = {
+        'form_produtos': form
+    }
+    return render(request, 'produtos_cadastrar.html', contexto)

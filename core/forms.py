@@ -2,20 +2,20 @@ from dataclasses import fields
 from pyexpat import model
 from django.forms import ModelForm
 from .models import Produtos
-from .models import funcionarios
-from .models import unidades
+from .models import Funcionarios
+from .models import Unidades
 
 class ProdutosForm(ModelForm):
     class Meta:
         model = Produtos
         fields = ['nome', 'tipo', 'marca','quantidade', 'descricao']
 
-class funcionariosForm(ModelForm):
+class UuncionariosForm(ModelForm):
     class Meta:
-        model = funcionarios
+        model = Funcionarios
         fields = ['nome_funcionario', 'idade', 'cargo']
 
-class unidadesForm(ModelForm):
+class UnidadesForm(ModelForm):
     class Meta:
-        model = unidades
+        model = Unidades
         fields = ['cidade', 'endereco', 'numero_funcionarios']

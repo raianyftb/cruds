@@ -8,12 +8,12 @@ class Produtos(models.Model):
     quantidade = models.IntegerField('Quantidade')
     descricao = models.CharField('Descrição', max_length=200)
      
-class funcionarios(models.Model): 
+class Funcionarios(models.Model): 
     nome_funcionario = models.CharField('Nomefunc', max_length=100)
     idade = models.IntegerField('Idade')
     cargo = models.CharField('Cargo', max_length=100)
 
-class unidades(models.Model): 
+class Unidades(models.Model): 
     cidade = models.CharField('Cidade', max_length=100)
     endereco = models.CharField('Endereço', max_length=100)
     numero_funcionarios = models.IntegerField('Número de funcionários')
