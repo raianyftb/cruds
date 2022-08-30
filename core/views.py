@@ -40,3 +40,8 @@ def cadastrar_produtos(request):
     }
     return render(request, 'produtos_cadastrar.html', contexto)
 
+def cadastrar_funcionarios(request):
+    return render(request, 'funcionarios_cadastrar.html')
+
+def cadastrar_unidades(request):
+    return render(request, 'unidades_cadastrar.html')
