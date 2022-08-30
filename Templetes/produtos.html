@@ -13,12 +13,27 @@
     
     <p>Listagem de produtos:</p>
     {% for produtos in todos_produtos %}
-    <p>Nome: {{produtos.nome}}</p>
-    <p>Marca: {{produtos.marca}}</p>
-    <p>Quantidade: {{produtos.quantidade}}</p>
-    <p>Descrição: {{produtos.descricao}}</p>
+
+    <p>
+        Nome: {{produtos.nome}}
+        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
+    </p>
+    <p>
+        Marca: {{produtos.marca}}
+        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
+    </p>
+    <p>
+        Quantidade: {{produtos.quantidade}}
+        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
+    </p>
+    <p>
+        Descrição: {{produtos.descricao}}
+        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
+    </p>
     {% empty %}
-    <p>Não existem produtos cadastrados</p>
+    <p>
+        Não existem produtos cadastrados
+    </p>
     {% endfor %}
 </body>
 </html>

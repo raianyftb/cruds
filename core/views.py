@@ -15,8 +15,22 @@ def cadastrar_produtos(request):
     if form.is_valid():
         form.save()
         return redirect('listar_produtos')
-        
+
     contexto = {
         'form_produtos': form
     }
     return render(request, 'produtos_cadastrar.html', contexto)
+
+def editar_produtos(request, id):
+    produto = Produtos.objects.get(pk=id)
+
+    form = ProdutosForm(request.POST or None, instace=produto)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_produtos')
+
+    contexto = {
+        'form_produtos': form 
+    }
+    return render(request, 'produtos_cadastrar.html')
