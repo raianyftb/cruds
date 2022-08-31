@@ -3,9 +3,14 @@ from .models import Produtos
 from .models import Funcionarios
 from .models import Unidades
 
+
 from .forms import ProdutosForm
 from .forms import FuncionariosForm
 from .forms import UnidadesForm
+
+def bigs_principal(request):
+    
+    return render(request, 'bigs.html')
 
 def listar_produtos(request):
     produto = Produtos.objects.all()
@@ -55,7 +60,7 @@ def cadastrar_funcionarios(request):
         'form_funcionarios': form
     }
     
-    return render(request, 'funcionarios_cadastrar.html')
+    return render(request, 'funcionarios_cadastrar.html', contexto)
 
 def cadastrar_unidades(request):
     form = UnidadesForm(request.POST or None) 
@@ -66,7 +71,7 @@ def cadastrar_unidades(request):
         'form_unidades': form
     }
     
-    return render(request, 'unidades_cadastrar.html')
+    return render(request, 'unidades_cadastrar.html', contexto)
 
 
 
@@ -76,7 +81,7 @@ def cadastrar_unidades(request):
 def editar_produtos(request, id):
     produto = Produtos.objects.get(pk=id)
 
-    form = ProdutosForm(request.POST or None, instace=produto)
+    form = ProdutosForm(request.POST or None, instance=produto)
 
     if form.is_valid():
         form.save()
@@ -90,7 +95,7 @@ def editar_produtos(request, id):
 def editar_funcionarios(request, id):
     funcionario = Funcionarios.objects.get(pk=id)
 
-    form = FuncionariosForm(request.POST or None, instace=funcionario)
+    form = FuncionariosForm(request.POST or None, instance=funcionario)
 
     if form.is_valid():
         form.save()
@@ -100,13 +105,13 @@ def editar_funcionarios(request, id):
         'form_funcionarios': form 
     }
     
-    return render(request, 'curso_cadastrar.html', contexto)
+    return render(request, 'funcionarios_cadastrar.html', contexto)
 
 
 def editar_unidades(request, id):
     unidade = Unidades.objects.get(pk=id)
 
-    form = UnidadesForm(request.POST or None, instace=unidade)
+    form = UnidadesForm(request.POST or None, instance=unidade)
 
     if form.is_valid():
         form.save()
@@ -115,7 +120,9 @@ def editar_unidades(request, id):
     contexto = {
         'form_unidades': form 
     }
-    return render(request, 'curso_unidades.html', contexto)
+    return render(request, 'unidades_cadastrar.html', contexto)
+
+
 
 
 def remover_produtos(request,id):
@@ -132,3 +139,4 @@ def remover_unidades(request,id):
     unidade = Unidades.objects.get(pk=id)
     unidade.delete()
     return redirect('listar_unidades')
+

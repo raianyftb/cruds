@@ -1,15 +1,16 @@
 from django.contrib import admin
 from django.urls import path
-from core.views import listar_produtos, listar_funcionarios, listar_unidades  
+from core.views import listar_produtos, listar_funcionarios, listar_unidades 
 from core.views import cadastrar_produtos, cadastrar_funcionarios, cadastrar_unidades
 from core.views import editar_produtos, editar_funcionarios, editar_unidades
-from core.views import remover_produtos, remover_unidades, remover_funcionarios
+from core.views import remover_produtos, remover_unidades, remover_funcionarios, bigs_principal
 from django.contrib import admin
 
 urlpatterns = [
     path('produtos/', listar_produtos, name='listar_produtos'),
     path('funcionarios/', listar_funcionarios, name='listar_funcionarios'),
     path('unidades/', listar_unidades, name='listar_unidades'),
+    path('bigs/', bigs_principal, name='bigs_principal'),
     
     path('cadastrar_produtos/', cadastrar_produtos, name='cadastrar_produtos'),
     path('cadastrar_funcionarios/', cadastrar_funcionarios, name='cadastrar_funcionarios'),

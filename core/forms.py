@@ -18,4 +18,4 @@ class FuncionariosForm(ModelForm):
 class UnidadesForm(ModelForm):
     class Meta:
         model = Unidades
-        fields = ['cidade', 'endereco', 'numero_funcionarios']
+        fields = ['cidade', 'endereco', 'numero_funcionarios', 'foto']

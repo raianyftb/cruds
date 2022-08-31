@@ -38,10 +38,9 @@
         Nome: {{funcionario.nome_funcionario}}
         Idade: {{funcionario.idade}}
         Cargo: {{funcionario.cargo}}
-        |<a href="{% url 'editar_funcionarios' funcionarios.id %}">EDITAR</a>
-        |<a href="{% url 'remover_funcionarios' funcionarios.id %}">REMOVER</a> 
+        |<a href="{% url 'editar_funcionarios' funcionario.id %}">EDITAR</a>
+        |<a href="{% url 'remover_funcionarios' funcionario.id %}">REMOVER</a> 
     </p>
-
 
 
     {% empty %}

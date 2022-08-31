@@ -92,54 +92,29 @@
             <div class="row">
               <div class="col-lg-4">
                 <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Estoque do café</h2>
-                <p><a href="{% url 'cadastrar_produtos' %}">Cadastar produtos</a></p>
-                {% for produtos in todos_produtos %}
+                <h2>Produtos</h2>
+                <p><a href="{% url 'cadastrar_produtos' %}">Cadastar</a></p>
+              </div><!-- /.col-lg-4 -->
+          
+
+              <div class="col-lg-4">
+                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                <h2>Funcionários</h2>
+                  <a href="{% url 'cadastrar_funcionarios' %}" role="button">Cadastrar</a></p>
+              </div><!-- /.col-lg-4 -->
+       
+
+              <div class="col-lg-4">
+                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                <h2>Unidades</h2>
                 
-                <p>marca: {{produtos.marca}}
-                   tipo: {{produtos.tipo}}
-                   quantidade: {{produtos.quantidade}}
-                   <a haref="{% 'editar_produto' bigs.id %}">EDITAR</a>
-                </p>
-                {% empty %}
-            
-                <p>Não existem produtos cadastrados</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div><!-- /.col-lg-4 -->
-                {% endfor %}
+                <p><a href="{% url 'cadastrar_unidades' %}" role="button">Cadastrar</a></p>
 
-              <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Lista dos Funcionários</h2>
-                {% for produtos in produtos %}
-                <p>marca: {{produtos.Marca}}
-                   tipo: {{produtos.Tipo}}
-                   quantidade: {{produtos.Quantidade}}
-                <p>
-                  {% empty %}
-                  <p>Não existem produtos cadastrados</p>
-                  <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div><!-- /.col-lg-4 -->
-              {% endfor %}
-
-              <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Título</h2>
-                {% for produtos in produtos %}
-                <p>marca: {{produtos.Marca}}
-                   tipo: {{produtos.Tipo}}
-                   quantidade: {{produtos.Quantidade}}
-                <p>
-                  {% empty %}
-                  <p>Não existem produtos cadastrados</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                {% endfor %}
               </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
     
-    <footer class="container">
+       <footer class="container">
         <p class="float-right"><a href="#">Voltar ao topo</a></p>
-        <p>&copy; Companhia S.A., 2017-2018 &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p>
       </footer>
     </main>
 </body>

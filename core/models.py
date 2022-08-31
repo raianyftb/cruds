@@ -9,7 +9,7 @@ class Produtos(models.Model):
     descricao = models.CharField('Descrição', max_length=200)
      
 class Funcionarios(models.Model): 
-    nome_funcionario = models.CharField('Nomefunc', max_length=100)
+    nome_funcionario = models.CharField('Nome', max_length=100)
     idade = models.IntegerField('Idade')
     cargo = models.CharField('Cargo', max_length=100)
 
@@ -17,3 +17,4 @@ class Unidades(models.Model):
     cidade = models.CharField('Cidade', max_length=100)
     endereco = models.CharField('Endereço', max_length=100)
     numero_funcionarios = models.IntegerField('Número de funcionários')
+    foto = models.FileField("Foto da unidade")

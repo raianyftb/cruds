@@ -6,6 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    h1
+  {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: rgb(124, 68, 0);
+      text-align: center;
+  }
+  body
+  {
+      background-color: beige;
+  }
+  .cor
+  {
+      background-color: rgba(175, 133, 82, 0.74);
+  }
+  p
+  {
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+</style>
+
 <body>
     <h1>Unidades</h1>
 
@@ -13,11 +34,11 @@
 
     <p>Listagem de unidades:</p>
 
-    {% for unidade in todos_funcionarios %}
+    {% for unidade in todos_unidades %}
     <p>
         Cidade: {{unidade.cidade}}
         Endereço: {{unidade.endereco}}
-        Número de funcionários: {{unidade.numero_funcionarios}}
+        Número de funcionários: {{unidade.numero_unidades}}
         | <a href="{% url 'editar_unidades' unidades.id %}">EDITAR</a>
         | <a href="{% url 'remover_unidades' funcionarios.id %}">REMOVER</a>
     </p>    
