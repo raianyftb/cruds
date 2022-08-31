@@ -40,14 +40,12 @@ def cadastrar_produtos(request):
     }
     return render(request, 'produtos_cadastrar.html', contexto)
 
-<<<<<<< HEAD
 def cadastrar_funcionarios(request):
     return render(request, 'funcionarios_cadastrar.html')
 
 def cadastrar_unidades(request):
     return render(request, 'unidades_cadastrar.html')
-=======
-<<<<<<< HEAD
+
 def editar_produtos(request, id):
     produto = Produtos.objects.get(pk=id)
 
@@ -61,6 +59,3 @@ def editar_produtos(request, id):
         'form_produtos': form 
     }
     return render(request, 'produtos_cadastrar.html')
-=======
->>>>>>> 2f842f4e977ffe400ea42cbca70a8dd2c1cdddb9
->>>>>>> dcbc159a4c65edca5f1234fbfd05a13c64db4f40
