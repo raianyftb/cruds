@@ -88,7 +88,12 @@ def editar_produtos(request, id):
     }
     return render(request, 'produtos_cadastrar.html')
 
+def editar_funcionarios(request, id):
+    return render(request, 'curso_cadastrar.html')
 
+
+def editar_unidades(request, id):
+    return render(request, 'curso_unidades.html')
 
 
 
