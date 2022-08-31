@@ -5,9 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1
+        {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(124, 68, 0);
+            text-align: center;
+        }
+       form
+       {
+        position:relative;
+        left:37%;
+        width:200px;
+        height:270px;
+
+       }
+        body
+        {
+            background-color: beige;
+        }
+        .cor
+        {
+            background-color: rgba(175, 133, 82, 0.74);
+        }
+        p
+        {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <h1>Cadastrar Produtos</h1>
+   <div class="cor"> <h1>Cadastrar Produtos</h1> </div>
     <form method="POST">
         {% csrf_token %}
         {{ form_produtos }}
