@@ -10,7 +10,7 @@ class ProdutosForm(ModelForm):
         model = Produtos
         fields = ['nome', 'tipo', 'marca','quantidade', 'descricao']
 
-class UuncionariosForm(ModelForm):
+class FuncionariosForm(ModelForm):
     class Meta:
         model = Funcionarios
         fields = ['nome_funcionario', 'idade', 'cargo']

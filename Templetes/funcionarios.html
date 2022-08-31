@@ -9,6 +9,8 @@
 <body>
     <h1>Funcionários</h1>
 
+    <p><a href="{% url 'cadastrar_funcionarios' %}">Cadastrar</a></p>
+
     <p>Listagem de funcionários:</p>
     {% for funcionario in todos_funcionarios %}
     <p>Nome: {{funcionario.nome_funcionario}}</p>

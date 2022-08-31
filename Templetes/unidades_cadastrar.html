@@ -9,5 +9,9 @@
 <body>
     <h1>Cadastrar unidades:</h1>
     <form method="POST">
+        {% csrf_token %}
+        {{ form_unidades }}
+        <p><input type="submit" value="Cadastrar" /></p>
+
 </body>
 </html>

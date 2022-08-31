@@ -9,5 +9,8 @@
 <body>
     <h1>Cadastrar funcionário:</h1>
     <form method="POST">
+        {% csrf_token %}
+        {{ form_funcionarios }}
+        <p><input type="submit" value="Cadastrar" /></p>
 </body>
 </html>

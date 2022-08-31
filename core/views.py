@@ -4,6 +4,8 @@ from .models import Funcionarios
 from .models import Unidades
 
 from .forms import ProdutosForm
+from .forms import FuncionariosForm
+from .forms import UnidadesForm
 
 
 def listar_produtos(request):
@@ -28,6 +30,10 @@ def listar_unidades(request):
     }
     return render(request, 'unidades.html', contexto)  
 
+
+
+
+
 def cadastrar_produtos(request):
     form = ProdutosForm(request.POST or None)
 
@@ -40,25 +46,34 @@ def cadastrar_produtos(request):
     }
     return render(request, 'produtos_cadastrar.html', contexto)
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> 94ad50d03c3bad1756fea125db6e5247405391fc
 def cadastrar_funcionarios(request):
+    form = FuncionariosForm(request.POST or None)  
+    if form.is_valid():
+        form.save()
+        return redirect('listar_funcionarios')
+    
+    contexto = {
+        'form_funcionarios': form
+    }
+    
     return render(request, 'funcionarios_cadastrar.html')
 
 def cadastrar_unidades(request):
+    form = UnidadesForm(request.POST or None) 
+    if form.is_valid():
+        form.save()
+        return redirect('listar_unidades') 
+    contexto = {
+        'form_unidades': form
+    }
+    
     return render(request, 'unidades_cadastrar.html')
-<<<<<<< HEAD
 
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 2abec525562e75bf562ef285dcf8e20879c8af1a
->>>>>>> 94ad50d03c3bad1756fea125db6e5247405391fc
+
+
+
+
+
 def editar_produtos(request, id):
     produto = Produtos.objects.get(pk=id)
 
@@ -72,17 +87,13 @@ def editar_produtos(request, id):
         'form_produtos': form 
     }
     return render(request, 'produtos_cadastrar.html')
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
+
+
+
+
 
 def remover_produtos(request,id):
     produto = Produtos.objects.get(pk=id)
     produto.delete()
     return redirect('listar_produtos')
-=======
-=======
->>>>>>> 2f842f4e977ffe400ea42cbca70a8dd2c1cdddb9
->>>>>>> dcbc159a4c65edca5f1234fbfd05a13c64db4f40
->>>>>>> 2abec525562e75bf562ef285dcf8e20879c8af1a
->>>>>>> 94ad50d03c3bad1756fea125db6e5247405391fc
