@@ -14,9 +14,13 @@
     <p>Listagem de unidades:</p>
 
     {% for unidade in todos_funcionarios %}
-    <p>Cidade: {{unidade.cidade}}</p>
-    <p>Endereço: {{unidade.endereco}}</p>
-    <p>Número de funcionários: {{unidade.numero_funcionarios}}</p>
+    <p>
+        Cidade: {{unidade.cidade}}
+        Endereço: {{unidade.endereco}}
+        Número de funcionários: {{unidade.numero_funcionarios}}
+        | <a href="{% url 'editar_unidades' unidades.id %}">EDITAR</a>
+        | <a href="{% url 'remover_unidades' funcionarios.id %}">REMOVER</a>
+    </p>    
     {% empty %}
     <p>Não existem unidades cadastradas</p>
     {% endfor %}

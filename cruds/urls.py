@@ -3,7 +3,7 @@ from django.urls import path
 from core.views import listar_produtos, listar_funcionarios, listar_unidades  
 from core.views import cadastrar_produtos, cadastrar_funcionarios, cadastrar_unidades
 from core.views import editar_produtos, editar_funcionarios, editar_unidades
-from core.views import remover_produtos
+from core.views import remover_produtos, remover_unidades, remover_funcionarios
 from django.contrib import admin
 
 urlpatterns = [
@@ -20,7 +20,7 @@ urlpatterns = [
     path('editar_unidades/<int:id>/', editar_unidades, name='editar_unidades'),
     
     path('remover_produtos/<int:id>/', remover_produtos, name='remover_produtos'),
-
-
+    path('remover_funcionarios/<int:id>/', remover_funcionarios, name='remover_funcionarios'),
+    path('remover_unidades/<int:id>/', remover_unidades, name='remover_unidades'),
     path('admin/', admin.site.urls),
 ]
