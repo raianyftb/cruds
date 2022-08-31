@@ -17,4 +17,4 @@ class Unidades(models.Model):
     cidade = models.CharField('Cidade', max_length=100)
     endereco = models.CharField('Endereço', max_length=100)
     numero_funcionarios = models.IntegerField('Número de funcionários')
-    foto = models.FileField("Foto da unidade")
+    foto = models.ImageField("Foto da unidade", upload_to="media/", null=True, blank=True)
