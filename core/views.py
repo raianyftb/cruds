@@ -40,7 +40,6 @@ def listar_unidades(request):
 
 def cadastrar_produtos(request):
     form = ProdutosForm(request.POST or None)
-
     if form.is_valid():
         form.save()
         return redirect('listar_produtos')
@@ -63,7 +62,7 @@ def cadastrar_funcionarios(request):
     return render(request, 'funcionarios_cadastrar.html', contexto)
 
 def cadastrar_unidades(request):
-    form = UnidadesForm(request.POST or None) 
+    form = UnidadesForm(request.POST or None, request.FILES or None) 
     if form.is_valid():
         form.save()
         return redirect('listar_unidades') 

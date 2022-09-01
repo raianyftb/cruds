@@ -36,9 +36,10 @@
 </head>
 <body>
     <h1>Cadastrar unidades:</h1>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form_unidades }}
+       <p>{{form.foto.label}} {{form.foto}}</p>
         <p><input type="submit" value="Cadastrar" /></p>
 
 </body>

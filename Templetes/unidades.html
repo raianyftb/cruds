@@ -34,13 +34,14 @@
 
     <p>Listagem de unidades:</p>
 
-    {% for unidade in todos_unidades %}
+    {% for unidade in todas_unidades %}
     <p>
         Cidade: {{unidade.cidade}}
         Endereço: {{unidade.endereco}}
         Número de funcionários: {{unidade.numero_unidades}}
-        | <a href="{% url 'editar_unidades' unidades.id %}">EDITAR</a>
-        | <a href="{% url 'remover_unidades' funcionarios.id %}">REMOVER</a>
+        <img src="/media/{{unidade.foto}}" alt="Foto" width="100px" height="100px" />
+        | <a href="{% url 'editar_unidades' unidade.id %}">EDITAR</a>
+        | <a href="{% url 'remover_unidades' unidade.id %}">REMOVER</a>
     </p>    
     {% empty %}
     <p>Não existem unidades cadastradas</p>
