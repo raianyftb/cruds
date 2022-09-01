@@ -29,16 +29,13 @@
 <body>
     <div class="cor"><h1>Funcionários</h1></div>
 
-    <p><a href="{% url 'cadastrar_funcionarios' %}">Cadastrar</a></p>
-
     <p>Listagem de funcionários:</p>
     {% for funcionario in todos_funcionarios %}
 
-    <p>
-        Nome: {{funcionario.nome_funcionario}}
-        Idade: {{funcionario.idade}}
-        Cargo: {{funcionario.cargo}}
-        |<a href="{% url 'editar_funcionarios' funcionario.id %}">EDITAR</a>
+    <p><b>Nome:</b> {{funcionario.nome_funcionario}}</p>
+    <p><b>Idade:</b> {{funcionario.idade}}</p>
+    <p><b>Cargo:</b> {{funcionario.cargo}}</p>
+    <p> |<a href="{% url 'editar_funcionarios' funcionario.id %}">EDITAR</a>
         |<a href="{% url 'remover_funcionarios' funcionario.id %}">REMOVER</a> 
     </p>
 
@@ -46,7 +43,7 @@
     {% empty %}
     <p>Não existem funcionários cadastrados</p>
     {% endfor %}
-
+    <p><a href="{% url 'bigs_principal' %}">Voltar à página inicial</a></p>
 
 </body>
 </html>
