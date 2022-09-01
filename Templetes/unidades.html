@@ -28,18 +28,26 @@
 </style>
 
 <body>
-    <h1>Unidades</h1>
+    <h1 class = "cor">Unidades</h1>
 
     <p><a href="{% url 'cadastrar_unidades' %}">Cadastrar</a></p>
 
     <p>Listagem de unidades:</p>
 
     {% for unidade in todas_unidades %}
+<<<<<<< HEAD
     <p>
         Cidade: {{unidade.cidade}}
         Endereço: {{unidade.endereco}}
         Número de funcionários: {{unidade.numero_unidades}}
         <img src="/media/{{unidade.foto}}" alt="Foto" width="100px" height="100px" />
+=======
+    <p><b>Cidade:</b> {{unidade.cidade}}</p>
+    <p><b>Endereço:</b> {{unidade.endereco}}</p>
+    <p><b>Número de funcionários:</b> {{unidade.numero_unidades}}</p>
+    <p><b>Imagem:</b>{{unidade.foto}}</p>
+    <p>
+>>>>>>> d787ff23927c026f0f478e2ce315ee13746f82c2
         | <a href="{% url 'editar_unidades' unidade.id %}">EDITAR</a>
         | <a href="{% url 'remover_unidades' unidade.id %}">REMOVER</a>
     </p>    
