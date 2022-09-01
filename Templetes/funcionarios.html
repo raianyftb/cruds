@@ -12,6 +12,12 @@
             color: rgb(124, 68, 0);
             text-align: center;
         }
+        h2
+        {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(124, 68, 0);
+        
+        }
         body
         {
             background-color: beige;
@@ -24,11 +30,9 @@
         {
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        a {
-            
+        .inicial{   
             display: block;
-            width: 160px;
-            height: 40px;
+            width: 180px;
             line-height: 40px;
             padding: 2px 1px;
             margin: 20px;
@@ -40,11 +44,7 @@
             font-weight: bold;
             font-family: Arial;
             margin-left: auto;
-            margin-right: auto 
-        }
-        a:visited {
-            color:#999999;
-            text-decoration:none;
+            margin-right: auto;
         }
         a:hover {
             color:#fffbfb;
@@ -55,21 +55,22 @@
 <body>
     <div class="cor"><h1>Funcionários</h1></div>
 
-    <p>Listagem de funcionários:</p>
+    <h2>Listagem de funcionários:</h2>
     {% for funcionario in todos_funcionarios %}
 
     <p><b>Nome:</b> {{funcionario.nome_funcionario}}</p>
     <p><b>Idade:</b> {{funcionario.idade}}</p>
     <p><b>Cargo:</b> {{funcionario.cargo}}</p>
-    <p> |<a href="{% url 'editar_funcionarios' funcionario.id %}">EDITAR</a>
-        |<a href="{% url 'remover_funcionarios' funcionario.id %}">REMOVER</a> 
+    <p>|<a href="{% url 'editar_funcionarios' funcionario.id %}">EDITAR</a>
+    |<a href="{% url 'remover_funcionarios' funcionario.id %}">REMOVER</a> 
     </p>
 
 
     {% empty %}
     <p>Não existem funcionários cadastrados</p>
     {% endfor %}
-    <p><a href="{% url 'bigs_principal' %}">Voltar à página inicial</a></p>
+    <p><a class="inicial" href="{% url 'cadastrar_produtos' %}">Cadastrar</a></p>
+    <p><a class="inicial" href="{% url 'bigs_principal' %}">Voltar à página inicial</a></p>
 
 </body>
 </html>

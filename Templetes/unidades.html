@@ -13,6 +13,12 @@
       color: rgb(124, 68, 0);
       text-align: center;
   }
+  h2
+        {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(124, 68, 0);
+        
+        }
   body
   {
       background-color: beige;
@@ -25,11 +31,9 @@
   {
       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
-  a {
-            
+  .inicial{   
             display: block;
-            width: 160px;
-            height: 40px;
+            width: 180px;
             line-height: 40px;
             padding: 2px 1px;
             margin: 20px;
@@ -41,11 +45,7 @@
             font-weight: bold;
             font-family: Arial;
             margin-left: auto;
-            margin-right: auto 
-        }
-        a:visited {
-            color:#999999;
-            text-decoration:none;
+            margin-right: auto;
         }
         a:hover {
             color:#fffbfb;
@@ -56,9 +56,8 @@
 <body>
     <h1 class = "cor">Unidades</h1>
 
-    <p><a href="{% url 'cadastrar_unidades' %}">Cadastrar</a></p>
 
-    <p>Listagem de unidades:</p>
+    <h2>Listagem de unidades:</h2>
 
     {% for unidade in todas_unidades %}
      <p><b>Cidade:</b> {{unidade.cidade}}</p>
@@ -75,7 +74,7 @@
     {% empty %}
     <p>Não existem unidades cadastradas</p>
     {% endfor %}
-    <p><a href="{% url 'bigs_principal' %}">Voltar à página inicial</a></p>
-  
+    <p><a class="inicial" href="{% url 'bigs_principal' %}">Voltar à página inicial</a></p>
+    <p><a class="inicial" href="{% url 'cadastrar_unidades' %}">Cadastrar</a></p>
 </body>
 </html>
