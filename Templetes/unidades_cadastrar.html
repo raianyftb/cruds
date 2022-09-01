@@ -35,13 +35,8 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-    <h1>Cadastrar unidades:</h1>
-    <form method="POST" enctype="multipart/form-data">
-=======
     <h1 class="cor">Cadastrar unidades:</h1>
-    <form method="POST">
->>>>>>> d787ff23927c026f0f478e2ce315ee13746f82c2
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form_unidades }}
        <p>{{form.foto.label}} {{form.foto}}</p>
