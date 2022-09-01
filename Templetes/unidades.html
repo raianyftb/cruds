@@ -35,11 +35,11 @@
     <p>Listagem de unidades:</p>
 
     {% for unidade in todas_unidades %}
+    <p><b>Cidade:</b> {{unidade.cidade}}</p>
+    <p><b>Endereço:</b> {{unidade.endereco}}</p>
+    <p><b>Número de funcionários:</b> {{unidade.numero_unidades}}</p>
+    <p><b>Imagem:</b>{{unidade.foto}}</p>
     <p>
-        Cidade: {{unidade.cidade}}
-        Endereço: {{unidade.endereco}}
-        Imagem: {{unidade.foto}}
-        Número de funcionários: {{unidade.numero_unidades}}
         | <a href="{% url 'editar_unidades' unidade.id %}">EDITAR</a>
         | <a href="{% url 'remover_unidades' unidade.id %}">REMOVER</a>
     </p>    

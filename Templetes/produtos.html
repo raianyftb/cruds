@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-          h1
+        h1
         {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             color: rgb(124, 68, 0);
@@ -24,27 +24,22 @@
         {
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
+          
     </style>
 </head>
 <body>
     <div class="cor"> <h1>Produtos</h1> </div>
-
-    <p>Listagem de produtos:</p>
-
-
-    <p><a href="{% url 'cadastrar_produtos' %}">Cadastrar</a></p>
     
     <p>Listagem de produtos:</p>
 
     {% for produtos in todos_produtos %}
 
-    <p>
-        Nome: {{produtos.nome}}
-        Marca: {{produtos.marca}} 
-        Quantidade: {{produtos.quantidade}}
-        Descrição: {{produtos.descricao}}
-        | <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
-        | <a href="{% url 'remover_produtos' produtos.id %}">REMOVER</a>
+        <p><b>Nome:</b> {{produtos.nome}}</p>
+        <p><b>Marca:</b> {{produtos.marca}}</p> 
+        <p><b>Quantidade:</b> {{produtos.quantidade}}</p> 
+        <p><b>Descrição:</b> {{produtos.descricao}}</p>
+    <p>| <a href="{% url 'editar_produtos' produtos.id %}">EDITAR</a>
+       | <a href="{% url 'remover_produtos' produtos.id %}">REMOVER</a>
     </p>
     
     {% empty %}
