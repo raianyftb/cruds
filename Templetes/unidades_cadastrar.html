@@ -37,10 +37,16 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
+    <h1>Cadastrar unidades:</h1>
+    <form method="POST" enctype="multipart/form-data">
+=======
     <h1 class="cor">Cadastrar unidades:</h1>
     <form method="POST">
+>>>>>>> d787ff23927c026f0f478e2ce315ee13746f82c2
         {% csrf_token %}
         {{ form_unidades }}
+       <p>{{form.foto.label}} {{form.foto}}</p>
         <p><input type="submit" value="Cadastrar" /></p>
         <p><a href="{% url 'bigs_principal' %}">Voltar à página inicial</a></p>
 </body>
