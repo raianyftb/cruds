@@ -30,12 +30,10 @@
 <body>
     <h1 class = "cor">Unidades</h1>
 
-    <p><a href="{% url 'cadastrar_unidades' %}">Cadastrar</a></p>
-
     <p>Listagem de unidades:</p>
 
     {% for unidade in todas_unidades %}
-     <p><b>Cidade:</b> {{unidade.cidade}}</p>
+    <p><b>Cidade:</b> {{unidade.cidade}}</p>
     <p><b>Endereço:</b> {{unidade.endereco}}</p>
     <p><b>Número de funcionários:</b> {{unidade.numero_unidades}}</p>
     <p><b>Imagem:</b></p>
